@@ -42,8 +42,8 @@ class home ( wx.Frame ):
 		self.m_panel15 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		gSizer6 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.m_button11 = wx.Button( self.m_panel15, wx.ID_ANY, u"User", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer6.Add( self.m_button11, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
+		self.btnuser = wx.Button( self.m_panel15, wx.ID_ANY, u"User", wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer6.Add( self.btnuser, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
 
 		self.m_button12 = wx.Button( self.m_panel15, wx.ID_ANY, u"Admin", wx.DefaultPosition, wx.DefaultSize, 0 )
 		gSizer6.Add( self.m_button12, 0, wx.ALIGN_LEFT|wx.ALL, 5 )
@@ -63,7 +63,20 @@ class home ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.btnuser.Bind( wx.EVT_BUTTON, self.btnuserOnButtonClick )
+		self.m_button12.Bind( wx.EVT_BUTTON, self.m_button12OnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def btnuserOnButtonClick( self, event ):
+		event.Skip()
+
+	def m_button12OnButtonClick( self, event ):
+		event.Skip()
+
 
 
