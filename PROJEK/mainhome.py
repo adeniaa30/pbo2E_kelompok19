@@ -1,4 +1,4 @@
-import home
+import home2
 import sqlite3
 import wx
 
@@ -8,17 +8,16 @@ cursor = con.cursor()
 def create(parent):
 	return home.home(parent)
 
-class home1(home.home):
+class home1(home2.home):
     def __init__(self, parent):
-        home.home.__init__(self, parent)
-        self.row = 0
+        home2.home.__init__(self, parent)
     
-    def btnuserOnButtonClick( self, event ):
+    def btnuserOnButtonClick( self, event ): #login user
         import mainloginuser
         self.frame2 = mainloginuser.create(self)
         self.frame2.Show()
 
-    def m_button12OnButtonClick( self, event ):
+    def btnAdminOnButtonClick( self, event ): #login admin
         import loginForm
         self.frame2 = loginForm.create(self)
         self.frame2.Show()

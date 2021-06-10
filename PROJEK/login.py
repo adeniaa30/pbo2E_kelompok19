@@ -13,8 +13,7 @@ import wx.xrc
 ###########################################################################
 ## Class MyFrame2
 ###########################################################################
-def create(parent):
-	return MyFrame2(parent)
+
 class MyFrame2 ( wx.Frame ):
 
 	def __init__( self, parent ):
@@ -66,7 +65,8 @@ class MyFrame2 ( wx.Frame ):
 
 		bSizer5.Add( gSizer2, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.SHAPED, 5 )
 
-		self.login = wx.Button( self, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.login = wx.Button( self, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, wx.BORDER_NONE )
+		self.login.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.login.SetBackgroundColour( wx.Colour( 152, 250, 176 ) )
 
 		bSizer5.Add( self.login, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.BOTTOM, 5 )

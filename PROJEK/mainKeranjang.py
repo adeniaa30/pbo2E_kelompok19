@@ -19,18 +19,10 @@ class manager:
         if retVal:
             return hasil
 
-def data_rows(self):
-    self.query = 'select judul, id_penerbit, id_penulis, id_kategori, tahun, stok, harga from Buku'
-    cursor.execute(self.query)
-    hasil = cursor.fetchall()
-    i = 0
-    for r in hasil : 
-        i += 1
-    return i
-
 class kjg(keranjang.MyFrame2):
     def __init__(self, parent):
         keranjang.MyFrame2.__init__(self, parent)
+        self.btnTampilOnButtonClick(self)
 
     def btnMenuOnButtonClick( self, event ):
         import mainMenu
@@ -53,6 +45,18 @@ class kjg(keranjang.MyFrame2):
         for row in hasil:
             self.outputTotal.SetValue(str(row[0]))
             # print('total yang harus dibayar adalah : ', row[0])
+    
+    def delKeranjangOnButtonClick( self, event ):
+        query = 'DELETE FROM Keranjang;'
+        cursor.execute(query)
+        con.commit()
+        wx.MessageBox("Hapus Berhasil !", "Berhasil", wx.OK)
+        row = self.tabelKjg.GetNumberRows() # row = 10
+        col = self.tabelKjg.GetNumberCols() # col = 3
+        if wx.OK:
+            for i in range(0, row):
+                for j in range(0, col):
+                    self.tabelKjg.SetCellValue(i,j," ")
     
     def bttnBayarOnButtonClick( self, event ):
         query = 'DELETE FROM Keranjang;'

@@ -23,8 +23,6 @@ class tambahpen(tambahPen.MyFrame2):
         cursor.execute(self.query)
         con.commit()
         wx.MessageBox("Berhasil ditambahkan ! Silahkah restart aplikasi", "berhasil !", wx.OK)
-        for row in cursor.fetchall():
-            penulis().setPenulis(id_penulis, nama_penulis, telp_penulis, kota_penulis)
         if (wx.OK):
             self.inputNama.SetValue("")
             self.inputID.SetValue("")
@@ -41,14 +39,6 @@ class manager:
         self.con.commit()
         if retVal:
             return hasil
-
-class penulis(manager):
-    def setPenulis(self, id_penulis, nama_penulis, telp_penulis, kota_penulis):
-        self.query = 'INSERT INTO Penulis (id_penulis, nama_penulis, telp_penulis, kota_penulis) VALUES (\'%s\', \'%s\', \'%s\', \'%s\');'
-        self.query = self.query % (id_penulis, nama_penulis, telp_penulis, kota_penulis)
-        self.execQuery(self.query)
-
-        wx.MessageBox("Berhasil ditambahkan !", "berhasil !", wx.OK)
 
 
 app = wx.App()

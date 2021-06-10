@@ -17,7 +17,7 @@ import wx.xrc
 class home ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Welcome", pos = wx.DefaultPosition, size = wx.Size( 500,400 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Welcome User", pos = wx.DefaultPosition, size = wx.Size( 500,304 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
@@ -45,7 +45,7 @@ class home ( wx.Frame ):
 		fgSizer2.Add( self.m_staticText2, 0, wx.ALL, 5 )
 
 
-		bSizer3.Add( fgSizer2, 1, wx.EXPAND, 5 )
+		bSizer3.Add( fgSizer2, 1, 0, 5 )
 
 		self.btnKatalog = wx.Button( self, wx.ID_ANY, u"Katalog", wx.DefaultPosition, wx.Size( 200,-1 ), wx.BORDER_NONE )
 		self.btnKatalog.SetFont( wx.Font( 20, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Goudy Old Style" ) )
@@ -54,13 +54,6 @@ class home ( wx.Frame ):
 		self.btnKatalog.SetMaxSize( wx.Size( 200,-1 ) )
 
 		bSizer3.Add( self.btnKatalog, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
-
-		self.btnOrder = wx.Button( self, wx.ID_ANY, u"Order", wx.DefaultPosition, wx.Size( 200,-1 ), wx.BORDER_NONE )
-		self.btnOrder.SetFont( wx.Font( 20, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Goudy Old Style" ) )
-		self.btnOrder.SetForegroundColour( wx.Colour( 255, 128, 128 ) )
-		self.btnOrder.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_MENU ) )
-
-		bSizer3.Add( self.btnOrder, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.btnKeranjang = wx.Button( self, wx.ID_ANY, u"Keranjang", wx.DefaultPosition, wx.Size( 200,-1 ), wx.BORDER_NONE )
 		self.btnKeranjang.SetFont( wx.Font( 20, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Goudy Old Style" ) )
@@ -87,7 +80,6 @@ class home ( wx.Frame ):
 
 		# Connect Events
 		self.btnKatalog.Bind( wx.EVT_BUTTON, self.btnKatalogOnButtonClick )
-		self.btnOrder.Bind( wx.EVT_BUTTON, self.btnOrderOnButtonClick )
 		self.btnKeranjang.Bind( wx.EVT_BUTTON, self.btnKeranjangOnButtonClick )
 		self.btnLogout.Bind( wx.EVT_BUTTON, self.btnLogoutOnButtonClick )
 
@@ -97,9 +89,6 @@ class home ( wx.Frame ):
 
 	# Virtual event handlers, overide them in your derived class
 	def btnKatalogOnButtonClick( self, event ):
-		event.Skip()
-
-	def btnOrderOnButtonClick( self, event ):
 		event.Skip()
 
 	def btnKeranjangOnButtonClick( self, event ):

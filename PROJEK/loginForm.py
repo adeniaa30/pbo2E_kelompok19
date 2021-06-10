@@ -30,8 +30,8 @@ class loginGui(login.MyFrame2):
         cursor.execute(query, (user, pwd))
         if cursor.fetchall():
             wx.MessageBox("Login Berhasil!", "Login")
-            import mainMenu
-            self.frame2 = mainMenu.create(self)
+            import mainMenuAdmin
+            self.frame2 = mainMenuAdmin.create(self)
             self.frame2.Show()
         else :
             wx.MessageBox("Error", "Login Gagal !")

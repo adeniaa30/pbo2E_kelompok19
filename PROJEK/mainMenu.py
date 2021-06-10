@@ -19,30 +19,19 @@ class manager:
         if retVal:
             return hasil
 
-def data_rows(self):
-    self.query = 'select judul, id_penerbit, id_penulis, id_kategori, tahun, stok, harga from Buku'
-    cursor.execute(self.query)
-    hasil = cursor.fetchall()
-    i = 0
-    for r in hasil : 
-        i += 1
-    return i
-
 class myMenu(menu.home):
     def __init__(self, parent):
         menu.home.__init__(self, parent)
 
     def btnKatalogOnButtonClick( self, event ):
-        import main
-        self.frame2 = main.create(self)
+        import mainAwalUser
+        self.frame2 = mainAwalUser.create(self)
         self.frame2.Show()
     
     def btnLogoutOnButtonClick( self, event ):
-        import loginForm
-        self.frame2 = loginForm.create(self)
+        import mainhome
+        self.frame2 = mainhome.create(self)
         self.frame2.Show()
-	# def btnOrderOnButtonClick( self, event ):
-	# 	event.Skip()
     
     def btnKeranjangOnButtonClick( self, event ):
         import mainKeranjang

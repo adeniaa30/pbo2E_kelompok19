@@ -34,7 +34,8 @@ def data_rows(self):
 class grid(dataGrid.tabelGrid):
     def __init__(self, parent):
         dataGrid.tabelGrid.__init__(self, parent)
-        self.row = 0
+        self.btnTampilOnButtonClick(self)
+        self.tampilPenOnButtonClick(self)
     
     def selectCell( self, event ):
         col = event.GetCol()
