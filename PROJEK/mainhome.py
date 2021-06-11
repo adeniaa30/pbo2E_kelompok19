@@ -6,7 +6,7 @@ con = sqlite3.connect('tokobuku.db')
 cursor = con.cursor()
 
 def create(parent):
-	return home.home(parent)
+	return home2.home(parent)
 
 class home1(home2.home):
     def __init__(self, parent):

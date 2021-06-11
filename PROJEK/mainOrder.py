@@ -64,7 +64,7 @@ class keranjang(buku):
         self.q_keranjang = self.q_keranjang % (judul_barang, jumlah_barang, harga_buku)
         self.execQuery(self.q_keranjang)
 
-        wx.MessageBox("Berhasil", "berhasil memasukkan keranjang", wx.OK | wx.ICON_INFORMATION)
+        wx.MessageBox("berhasil memasukkan keranjang", "Berhasil", wx.OK | wx.ICON_INFORMATION)
         
     
     def getKeranjang(self):
